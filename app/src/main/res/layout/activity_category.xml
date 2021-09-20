@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".Category">
+
+
+    <Button
+        android:id="@+id/btn_expressway"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="132dp"
+        android:background="@drawable/cateogarybtn"
+        android:fontFamily="@font/acme"
+        android:text="@string/btn_expressway"
+        android:textColor="@color/category"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_train"
+        android:layout_width="300dp"
+        android:background="@drawable/cateogarybtn"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/acme"
+        android:text="@string/btn_train"
+        android:textSize="34sp"
+        android:textColor="@color/category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_expressway" />
+
+    <Button
+        android:id="@+id/btn_movie"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/acme"
+        android:text="@string/btn_movie"
+        android:background="@drawable/cateogarybtn"
+        android:textSize="34sp"
+        android:textColor="@color/category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_train" />
+
+    <Button
+        android:id="@+id/btn_concert"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/acme"
+        android:textColor="@color/category"
+        android:background="@drawable/cateogarybtn"
+        android:text="@string/btn_concert"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_movie" />
+</androidx.constraintlayout.widget.ConstraintLayout>

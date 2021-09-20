@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">madProject1</string>
+    <string name="title1">Ticket+</string>
+    <string name="title2">Welcome Back</string>
+    <string name="email">Enter your Email</string>
+    <string name="password">Enter your Password</string>
+    <string name="btn_login">SIGN IN</string>
+    <string name="btn_register">SIGN UP</string>
+    <string name="title3">Welcome</string>
+    <string name="user_name">Enter your Name</string>
+    <string name="et_email" />
+    <string name="btn_register1">SIGN UP</string>
+    <string name="btn_login1">SIGN IN</string>
+    <string name="btn_logout">LOG OUT</string>
+    <string name="verifyEmail">Please Verify Your Email</string>
+    <string name="btn_verify">VERIFY</string>
+    <string name="btn_start">START NOW</string>
+    <string name="btn_logout1">LOG OUT</string>
+    <string name="btn_expressway">EXPRESSWAY+</string>
+    <string name="btn_train">TRAIN+</string>
+    <string name="btn_movie">MOVIE+</string>
+    <string name="btn_concert">CONCERT+</string>
+</resources>
