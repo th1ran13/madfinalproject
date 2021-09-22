@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="category">#cddafd</color>
     <color name="plot">#B8B3B6</color>
+    <color name="navbarbottom">#f1faee</color>
 </resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynav"
+    app:startDestination="@id/category">
+
+    <activity
+        android:id="@+id/category"
+        android:name="com.example.madproject1.Category"
+        android:label="activity_category"
+        tools:layout="@layout/activity_category" />
+    <activity
+        android:id="@+id/showTickets"
+        android:name="com.example.madproject1.ShowTickets"
+        android:label="activity_show_tickets"
+        tools:layout="@layout/activity_show_tickets" />
+</navigation>

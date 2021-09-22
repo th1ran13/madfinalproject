@@ -20,7 +20,7 @@ public class AllMovies extends AppCompatActivity implements MovieItemClickListne
 
     private RecyclerView MoviesAll;
 
-
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,9 @@ public class AllMovies extends AppCompatActivity implements MovieItemClickListne
         MoviesAll.setAdapter(movieAdapter);
         MoviesAll.setLayoutManager(new LinearLayoutManager(this , LinearLayoutManager.HORIZONTAL , false));
 
-
+        viewPager = (ViewPager)findViewById(R.id.myPager);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
 
     }
 
