@@ -10,10 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
 
@@ -66,22 +69,49 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
-                Toast.makeText(Register.this , "Data Validated" , Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Register.this , "Data Validated" , Toast.LENGTH_SHORT).show();
 
-                fAuth.createUserWithEmailAndPassword(userEmail , userPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        //send user to next page
-                        startActivity(new Intent(getApplicationContext() , Login.class));
-                        finish();
+//                fAuth.createUserWithEmailAndPassword(userEmail , userPassword).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                    @Override
+//                    public void onSuccess(AuthResult authResult) {
+//                        //send user to next page
+//                        startActivity(new Intent(getApplicationContext() , Login.class));
+//                        finish();
+//
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(Register.this , e.getMessage() , Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Register.this , e.getMessage() , Toast.LENGTH_SHORT).show();
-                    }
-                });
+                fAuth.createUserWithEmailAndPassword(userEmail , userPassword)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull  Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    User user = new User(userName , userEmail , userPassword );
+
+                                    FirebaseDatabase.getInstance().getReference("Users")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                                 if(task.isSuccessful()){
+                                                     Toast.makeText(Register.this , "Successfully Registered " , Toast.LENGTH_SHORT).show();
+
+                                                     startActivity(new Intent(getApplicationContext() , Login.class));
+                                                 }else{
+                                                     Toast.makeText(Register.this , "Failed " , Toast.LENGTH_SHORT).show();
+                                                 }
+                                        }
+                                    });
+                                }else{
+                                    Toast.makeText(Register.this , "Failed " , Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
 

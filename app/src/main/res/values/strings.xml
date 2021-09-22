@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">madProject1</string>
+    <string name="app_name">TICKET+</string>
     <string name="title1">Ticket+</string>
     <string name="title2">Welcome Back</string>
     <string name="email">Enter your Email</string>
@@ -20,4 +20,19 @@
     <string name="btn_train">TRAIN+</string>
     <string name="btn_movie">MOVIE+</string>
     <string name="btn_concert">CONCERT+</string>
+    <string name="moviedes">Bruce Wayne and Diana Prince try to bring the metahumans
+        of Earth together after the death of Clark Kent. Meanwhile, Darkseid sends
+        Steppenwolf to Earth with a vast army to subjugate humans."</string>
+    <string name="buyticket">BUY TICKET</string>
+    <string name="et_movieName">Enter Movie Name</string>
+    <string name="et_userName">Enter Your Name</string>
+    <string name="tv_date">Select Date</string>
+    <string name="et_noTicket">Enter No of Tickets</string>
+    <string name="btn_add">PAY</string>
+    <string name="tv_price">Select Ticket Price</string>
+    <string name="tot_price_show">Total Price :</string>
+    <string name="price_show">0</string>
+    <string name="btn_checkout">CHECKOUT</string>
+    <string name="btn_apply">APPLY</string>
+    <string name="tv_time">Select Show Time</string>
 </resources>

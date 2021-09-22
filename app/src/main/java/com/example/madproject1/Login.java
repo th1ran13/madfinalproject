@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -56,21 +58,36 @@ public class Login extends AppCompatActivity {
 
                 //data is valid
                 //login user
-                firebaseAuth.signInWithEmailAndPassword(username.getText().toString() , password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        //login is success
-                        startActivity(new Intent(getApplicationContext() , VerifyEmail.class));
-                        finish();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Login.this , e.getMessage() , Toast.LENGTH_SHORT).show();
-                    }
-                });
+//                firebaseAuth.signInWithEmailAndPassword(username.getText().toString() , password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                    @Override
+//                    public void onSuccess(AuthResult authResult) {
+//                        //login is success
+//                        startActivity(new Intent(getApplicationContext() , VerifyEmail.class));
+//                        finish();
+//                    }
+//                }).addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(Login.this , e.getMessage() , Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+
+                firebaseAuth.signInWithEmailAndPassword(username.getText().toString() , password.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull  Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    startActivity(new Intent(getApplicationContext() , VerifyEmail.class));
+
+                                }else{
+                                    Toast.makeText(Login.this , "Failed" , Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
             }
         });
+
+
 
 
     }
