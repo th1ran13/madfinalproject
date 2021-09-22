@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -20,11 +21,14 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class EnterTicketDetail extends AppCompatActivity {
+
+
 
     TextView tv_date , price_show , tv_price , tv_time_show;
     DatePickerDialog.OnDateSetListener setListener;
@@ -120,8 +124,12 @@ public class EnterTicketDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 insertData();
+                startActivity(new Intent(getApplicationContext() , ShowTickets.class));
+
             }
         });
+
+
 
         //Calender
         tv_date = findViewById(R.id.tv_date);
@@ -173,26 +181,28 @@ public class EnterTicketDetail extends AppCompatActivity {
 
     private void insertData(){
         Map<String , Object> map = new HashMap<>();
-        map.put("moviename " , et_movieName.getText().toString());
-        map.put("username" , et_userName.getText().toString());
-        map.put("date" , tv_date.getText().toString());
+        map.put("movieName " , et_movieName.getText().toString());
+        map.put("userName" , et_userName.getText().toString());
+        map.put("movieDate" , tv_date.getText().toString());
         map.put("time" , tv_time_show.getText().toString());
         map.put("noOfTickets" , et_noTicket.getText().toString());
-        map.put("Total Price " , totPrice);
+        map.put("Price" , totPrice);
 
 
-        FirebaseDatabase.getInstance().getReference().child("tickets").push()
+
+
+        FirebaseDatabase.getInstance().getReference().child("Tickets").push()
                 .setValue(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(EnterTicketDetail.this , "Insert" , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EnterTicketDetail.this , "Successfully Paid" , Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull  Exception e) {
-                        Toast.makeText(EnterTicketDetail.this , "Failed" , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EnterTicketDetail.this , "Something Wrong" , Toast.LENGTH_SHORT).show();
                     }
                 });
     }
