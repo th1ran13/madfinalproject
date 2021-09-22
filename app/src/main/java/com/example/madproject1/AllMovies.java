@@ -33,9 +33,9 @@ public class AllMovies extends AppCompatActivity implements MovieItemClickListne
         List<Movie> lstMovie = new ArrayList<>();
         lstMovie.add(new Movie("Snyder Cut JL" , R.drawable.zsjl , R.drawable.zack));
         lstMovie.add(new Movie("Suicide Squad" , R.drawable.suicidesquad , R.drawable.suicide));
-        lstMovie.add(new Movie("Black Widow" , R.drawable.blackwidow));
-        lstMovie.add(new Movie("Cruella" , R.drawable.cru));
-        lstMovie.add(new Movie("Army of Dead" , R.drawable.aotd));
+        lstMovie.add(new Movie("Black Widow" , R.drawable.blackwidow , R.drawable.blackwidowbanner1));
+        lstMovie.add(new Movie("Cruella" , R.drawable.cru , R.drawable.cruellabanner1));
+        lstMovie.add(new Movie("Army of Dead" , R.drawable.aotd , R.drawable.aotdbanner));
 
 
 

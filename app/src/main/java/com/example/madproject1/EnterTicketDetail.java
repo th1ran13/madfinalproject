@@ -29,12 +29,11 @@ import java.util.Map;
 public class EnterTicketDetail extends AppCompatActivity {
 
 
-
     TextView tv_date , price_show , tv_price , tv_time_show;
     DatePickerDialog.OnDateSetListener setListener;
 
     EditText et_movieName , et_userName , et_noTicket;
-    Button btn_add , btn_checkout , btn_apply_price , btn_apply_time;
+    Button btn_add , btn_checkout , btn_apply_price , btn_apply_time , btn_ticket;
     RadioGroup radioGroup , radioGroupTime;
     RadioButton radioButton ,radioButtonTime;
     int totPrice;
@@ -53,6 +52,15 @@ public class EnterTicketDetail extends AppCompatActivity {
         btn_apply_time = findViewById(R.id.btn_apply_time);
         radioGroupTime = findViewById(R.id.group_time);
         tv_time_show = findViewById(R.id.tv_time_show);
+        btn_ticket = findViewById(R.id.btn_ticket);
+
+        btn_ticket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext() , ShowTickets.class));
+                finish();
+            }
+        });
 
         btn_apply_time.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +132,8 @@ public class EnterTicketDetail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 insertData();
-                startActivity(new Intent(getApplicationContext() , ShowTickets.class));
+
+                //startActivity(new Intent(getApplicationContext() , ShowTickets.class));
 
             }
         });
@@ -181,7 +190,7 @@ public class EnterTicketDetail extends AppCompatActivity {
 
     private void insertData(){
         Map<String , Object> map = new HashMap<>();
-        map.put("movieName " , et_movieName.getText().toString());
+        map.put("movieName" , et_movieName.getText().toString());
         map.put("userName" , et_userName.getText().toString());
         map.put("movieDate" , tv_date.getText().toString());
         map.put("time" , tv_time_show.getText().toString());
@@ -206,6 +215,14 @@ public class EnterTicketDetail extends AppCompatActivity {
                     }
                 });
     }
+
+//    private void clearAll(){
+//        et_movieName.setText("");
+//        et_userName.setText(" ");
+//        tv_date.setText("");
+//        tv_time_show.setText("");
+//        et_noTicket.setText("");
+//    }
 
 
 }

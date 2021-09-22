@@ -35,4 +35,5 @@
     <string name="btn_checkout">CHECKOUT</string>
     <string name="btn_apply">APPLY</string>
     <string name="tv_time">Select Show Time</string>
+    <string name="btn_ticket">VIEW TICKET</string>
 </resources>
