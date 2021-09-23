@@ -6,12 +6,20 @@ public class MovieTicketModel {
 
     String movieName ;
     String userName;
-    int noOfTickets;
+    String noOfTickets;
     String time;
     String movieDate;
     int Price;
 
-    public MovieTicketModel(String movieName, String userName, int noOfTickets, String time, String movieDate, int price) {
+    MovieTicketModel(){}
+
+    public MovieTicketModel(String movieName, String time, String movieDate) {
+        this.movieName = movieName;
+        this.time = time;
+        this.movieDate = movieDate;
+    }
+
+    public MovieTicketModel(String movieName, String userName, String noOfTickets, String time, String movieDate, int price) {
         this.movieName = movieName;
         this.userName = userName;
         this.noOfTickets = noOfTickets;
@@ -20,20 +28,20 @@ public class MovieTicketModel {
         Price = price;
     }
 
-    public MovieTicketModel(String movieName, String userName, int noOfTickets, String movieDate, int price) {
-        this.movieName = movieName;
-        this.userName = userName;
-        this.noOfTickets = noOfTickets;
-        this.movieDate = movieDate;
-        Price = price;
-    }
-
-    public MovieTicketModel(String movieName, String userName, int noOfTickets, String movieDate) {
-        this.movieName = movieName;
-        this.userName = userName;
-        this.noOfTickets = noOfTickets;
-        this.movieDate = movieDate;
-    }
+//    public MovieTicketModel(String movieName, String userName, String noOfTickets, String movieDate, int price) {
+//        this.movieName = movieName;
+//        this.userName = userName;
+//        this.noOfTickets = noOfTickets;
+//        this.movieDate = movieDate;
+//        Price = price;
+//    }
+//
+//    public MovieTicketModel(String movieName, String userName, String noOfTickets, String movieDate) {
+//        this.movieName = movieName;
+//        this.userName = userName;
+//        this.noOfTickets = noOfTickets;
+//        this.movieDate = movieDate;
+//    }
 
     public String getTime() {
         return time;
@@ -67,11 +75,11 @@ public class MovieTicketModel {
         this.userName = userName;
     }
 
-    public int getNoOfTickets() {
+    public String getNoOfTickets() {
         return noOfTickets;
     }
 
-    public void setNoOfTickets(int noOfTickets) {
+    public void setNoOfTickets(String noOfTickets) {
         this.noOfTickets = noOfTickets;
     }
 

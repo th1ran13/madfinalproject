@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -30,7 +31,7 @@ public class EnterTicketDetail extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener setListener;
 
     EditText et_movieName , et_userName , et_noTicket;
-    Button btn_add , btn_checkout , btn_apply_price , btn_apply_time;
+    Button btn_add , btn_checkout , btn_apply_price , btn_apply_time , btn_ticket;
     RadioGroup radioGroup , radioGroupTime;
     RadioButton radioButton ,radioButtonTime;
     int totPrice;
@@ -49,6 +50,15 @@ public class EnterTicketDetail extends AppCompatActivity {
         btn_apply_time = findViewById(R.id.btn_apply_time);
         radioGroupTime = findViewById(R.id.group_time);
         tv_time_show = findViewById(R.id.tv_time_show);
+        btn_ticket = findViewById(R.id.btn_ticket);
+
+        btn_ticket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext() , ShowTickets.class));
+                finish();
+            }
+        });
 
         btn_apply_time.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,20 +183,20 @@ public class EnterTicketDetail extends AppCompatActivity {
 
     private void insertData(){
         Map<String , Object> map = new HashMap<>();
-        map.put("moviename " , et_movieName.getText().toString());
-        map.put("username" , et_userName.getText().toString());
-        map.put("date" , tv_date.getText().toString());
+        map.put("movieName" , et_movieName.getText().toString());
+        map.put("userName" , et_userName.getText().toString());
+        map.put("movieDate" , tv_date.getText().toString());
         map.put("time" , tv_time_show.getText().toString());
         map.put("noOfTickets" , et_noTicket.getText().toString());
-        map.put("Total Price " , totPrice);
+        map.put("Price" , totPrice);
 
 
-        FirebaseDatabase.getInstance().getReference().child("tickets").push()
+        FirebaseDatabase.getInstance().getReference().child("Tickets").push()
                 .setValue(map)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(EnterTicketDetail.this , "Insert" , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EnterTicketDetail.this , "Payment Completed" , Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
