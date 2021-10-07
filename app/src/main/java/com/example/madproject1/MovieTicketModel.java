@@ -5,7 +5,8 @@ import java.util.Date;
 public class MovieTicketModel {
 
     String movieName ;
-    String userName;
+    //String userName;
+    String theater;
     String noOfTickets;
     String time;
     String movieDate;
@@ -19,14 +20,31 @@ public class MovieTicketModel {
         this.movieDate = movieDate;
     }
 
-    public MovieTicketModel(String movieName, String userName, String noOfTickets, String time, String movieDate, int price) {
+    public MovieTicketModel(String movieName, String theater, String noOfTickets, String time, String movieDate, int price) {
         this.movieName = movieName;
-        this.userName = userName;
+        this.theater = theater;
         this.noOfTickets = noOfTickets;
         this.time = time;
         this.movieDate = movieDate;
         Price = price;
     }
+
+    //================================= uncomment
+//    public MovieTicketModel(String movieName, String time, String movieDate) {
+//        this.movieName = movieName;
+//        this.time = time;
+//        this.movieDate = movieDate;
+//    }
+//
+//    public MovieTicketModel(String movieName, String userName, String noOfTickets, String time, String movieDate, int price) {
+//        this.movieName = movieName;
+//        this.userName = userName;
+//        this.noOfTickets = noOfTickets;
+//        this.time = time;
+//        this.movieDate = movieDate;
+//        Price = price;
+//    }
+    //================================= uncomment
 
 //    public MovieTicketModel(String movieName, String userName, String noOfTickets, String movieDate, int price) {
 //        this.movieName = movieName;
@@ -67,13 +85,13 @@ public class MovieTicketModel {
         this.movieName = movieName;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+//    public String getUserName() {
+//        return userName;
+//    }
+//
+//    public void setUserName(String userName) {
+//        this.userName = userName;
+//    }
 
     public String getNoOfTickets() {
         return noOfTickets;

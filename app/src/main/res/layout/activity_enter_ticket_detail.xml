@@ -4,9 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/btn_date"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/bg"
+    android:layout_height="match_parent"
+
     tools:context=".EnterTicketDetail">
+
+        <EditText
+            android:id="@+id/et_userName"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/et_userName"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.262"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_movieName" />
+
 
     <EditText
         android:id="@+id/et_movieName"
@@ -23,28 +40,13 @@
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
-
-    <EditText
-        android:id="@+id/et_userName"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="@string/et_userName"
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_movieName" />
+        app:layout_constraintVertical_bias="0.055" />
 
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="350dp"
         android:layout_height="45dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="168dp"
         android:paddingLeft="5dp"
         android:text="@string/tv_date"
         android:textColor="@color/white"
@@ -52,8 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_userName" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_noTicket"
@@ -70,23 +71,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_date" />
 
-
     <Button
         android:id="@+id/btn_add"
-        android:layout_width="115dp"
-        android:layout_height="51dp"
+        android:layout_width="103dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/tochbtn"
         android:text="@string/btn_add"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tot_price_show"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.21" />
 
     <RadioGroup
         android:id="@+id/group_time"
@@ -114,10 +116,10 @@
             android:button="@android:color/transparent"
             android:onClick="checkBtntime"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="10.30"
+            android:textColor="@color/black"
 
-            android:textColor="@color/black" />
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/time_two"
@@ -128,9 +130,9 @@
             android:button="@android:color/transparent"
             android:onClick="checkBtntime"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="02.00"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/time_three"
@@ -141,9 +143,9 @@
             android:button="@android:color/transparent"
             android:onClick="checkBtntime"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="07.00"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <RadioGroup
@@ -172,9 +174,9 @@
             android:button="@android:color/transparent"
             android:onClick="checkBtn"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="100"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/price_two"
@@ -185,9 +187,9 @@
             android:button="@android:color/transparent"
             android:onClick="checkBtn"
             android:padding="10dp"
-            android:textStyle="bold"
             android:text="200"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/price_three"
@@ -199,22 +201,22 @@
             android:onClick="checkBtn"
             android:padding="10dp"
             android:text="300"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/tv_price_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:paddingLeft="5dp"
         android:text="@string/tv_price"
         android:textColor="@color/white"
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/group_time" />
 
@@ -258,17 +260,18 @@
     <Button
 
         android:id="@+id/btn_checkout"
-        android:layout_width="115dp"
-        android:layout_height="51dp"
+        android:layout_width="103dp"
+        android:layout_height="48dp"
         android:background="@drawable/tochbtn"
         android:text="@string/btn_checkout"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tot_price_show"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.214" />
 
     <TextView
         android:id="@+id/tv_price"
@@ -276,7 +279,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="0"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -338,7 +341,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_noTicket"
         app:layout_constraintVertical_bias="0.002" />
@@ -361,16 +364,36 @@
 
     <Button
         android:id="@+id/btn_ticket"
-        android:layout_width="115dp"
-        android:layout_height="51dp"
+        android:layout_width="103dp"
+        android:layout_height="48dp"
         android:background="@drawable/tochbtn"
         android:text="@string/btn_ticket"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tot_price_show"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.214" />
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="start"
+            app:itemBackground="@color/actionbar"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:menu="@menu/menu" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

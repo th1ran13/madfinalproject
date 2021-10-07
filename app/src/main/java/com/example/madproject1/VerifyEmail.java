@@ -29,15 +29,16 @@ public class VerifyEmail extends AppCompatActivity {
         verifyEmail = findViewById(R.id.verifyEmail);
         btn_verify = findViewById(R.id.btn_verify);
 
-        btn_logout = findViewById(R.id.btn_logout);
-        btn_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext() , Login.class));
-                finish();
-            }
-        });
+//        btn_logout = findViewById(R.id.btn_logout);
+//        btn_logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseAuth.getInstance().signOut();
+//                //startActivity(new Intent(getApplicationContext() , Login.class));
+//                startActivity(new Intent(VerifyEmail.this , Login.class));
+//                finish();
+//            }
+//        });
 
         btn_start = findViewById(R.id.btn_start);
         btn_start.setOnClickListener(new View.OnClickListener() {

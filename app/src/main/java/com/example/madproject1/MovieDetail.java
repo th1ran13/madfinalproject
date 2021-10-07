@@ -42,6 +42,7 @@ public class MovieDetail extends AppCompatActivity {
         String movieTitle = getIntent().getExtras().getString("name");
         int imageResource = getIntent().getExtras().getInt("imgURL");
         int imagecover = getIntent().getExtras().getInt("imgCover");
+        String description = getIntent().getExtras().getString("description");
 
         MovieThumnailImg = findViewById(R.id.detail_movie_img);
         Glide.with(this).load(imageResource).into(MovieThumnailImg);
@@ -53,6 +54,7 @@ public class MovieDetail extends AppCompatActivity {
         tv_title.setText(movieTitle);
         //getSupportActionBar().setTitle(movieTitle);
         tv_description = findViewById(R.id.detail_movie_desc);
+        tv_description.setText(description);
 
     }
 }

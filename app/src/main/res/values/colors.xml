@@ -10,4 +10,6 @@
     <color name="category">#cddafd</color>
     <color name="plot">#B8B3B6</color>
     <color name="navbarbottom">#f1faee</color>
+    <color name="actionupbar">#000000</color>
+    <color name="actionbar">#675a6e</color>
 </resources>

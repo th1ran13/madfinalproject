@@ -9,6 +9,13 @@ public class Movie {
     private String rating;
     private int coverPhoto;
 
+    public Movie(String title, String description, int thumbnail, int coverPhoto) {
+        this.title = title;
+        this.description = description;
+        this.thumbnail = thumbnail;
+        this.coverPhoto = coverPhoto;
+    }
+
     public Movie(String title, int thumbnail, int coverPhoto) {
         this.title = title;
         this.thumbnail = thumbnail;

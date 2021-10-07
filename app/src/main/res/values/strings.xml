@@ -25,7 +25,7 @@
         Steppenwolf to Earth with a vast army to subjugate humans."</string>
     <string name="buyticket">BUY TICKET</string>
     <string name="et_movieName">Enter Movie Name</string>
-    <string name="et_userName">Enter Your Name</string>
+    <string name="et_userName">Enter Theater Name</string>
     <string name="tv_date">Select Date</string>
     <string name="et_noTicket">Enter No of Tickets</string>
     <string name="btn_add">PAY</string>
@@ -36,4 +36,10 @@
     <string name="btn_apply">APPLY</string>
     <string name="tv_time">Select Show Time</string>
     <string name="btn_ticket">VIEW TICKET</string>
+    <string-array name="theaters">
+        <item>Item 1</item>
+        <item>Item 1</item>
+        <item>Item 1</item>
+
+    </string-array>
 </resources>

@@ -4,32 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    tools:context=".ShowTickets">
+    tools:context=".profile">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_ticket"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="start"
-            app:itemIconTint="@drawable/selector"
             app:itemBackground="@color/actionbar"
+            app:itemIconTint="@drawable/selector"
             app:itemTextColor="@drawable/selector"
-            app:menu="@menu/menu"
-            android:layout_alignParentBottom="true"/>
+            app:menu="@menu/menu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Profile" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
